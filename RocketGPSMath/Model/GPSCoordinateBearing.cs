@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RocketGPSMath.Model
 {
+    //Inherits from GPSCoordinate, this one has Bearing
     public class GPSCoordinateBearing : GPSCoordinate
     {
         public GPSDegree bearing;

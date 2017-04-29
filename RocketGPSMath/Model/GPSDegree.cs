@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RocketGPS.Model
 {
+    //Stores information in DMS form, can be constructed via Decimal or DMS. Can be converted to Decimal using toDouble.
     public class GPSDegree : IGPSCoordinateMath
     {
         public static double equalityEpsilon = 0.1;
