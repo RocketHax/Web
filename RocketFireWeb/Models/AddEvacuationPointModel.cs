@@ -9,5 +9,8 @@ namespace RocketFireWeb.Models
   public class AddEvacuationPointModel : GeoLocationModel
   {
     public string Name { get; set; }
+
+    public string Type { get; set; }
+
   }
 }

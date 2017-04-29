@@ -16,11 +16,10 @@ namespace EarthFire.Data
 
     public EarthFireContext(string nameOrConnectionString) : base(nameOrConnectionString)
     {
-      Database.SetInitializer<EarthFireContext>(new CreateDatabaseIfNotExists<EarthFireContext>());
-      Database.SetInitializer<EarthFireContext>(new DropCreateDatabaseIfModelChanges<EarthFireContext>());
-
+      //Database.SetInitializer<EarthFireContext>(new CreateDatabaseIfNotExists<EarthFireContext>());
+      //Database.SetInitializer<EarthFireContext>(new DropCreateDatabaseIfModelChanges<EarthFireContext>());
       //Database.SetInitializer<EarthFireContext>(new DropCreateDatabaseAlways<EarthFireContext>());
-      //Database.SetInitializer<EarthFireContext>(new EarthFireInitializer());
+      Database.SetInitializer<EarthFireContext>(new EarthFireInitializer());
     }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
