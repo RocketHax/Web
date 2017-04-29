@@ -341,12 +341,7 @@
     <Content Include="ApiDemo\api_get_reportfire.http" />
     <Content Include="ApiDemo\api_post_evacuation.http" />
     <Content Include="ApiDemo\api_post_reportfire.http" />
-    <Content Include="ApiDemo\MODIS_C6_USA_contiguous_and_Hawaii_24h.kml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ApiDemo\VNP14IMGTDL_NRT_USA_contiguous_and_Hawaii_24h.kml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ApiDemo\api_get_firesource.http" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

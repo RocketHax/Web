@@ -1,0 +1,2 @@
+GET http://localhost:60131/api/firesource?latitude1=1&latitude2=2&longitude1=3&longitude2=4 HTTP/1.1
+content-type: application/json
