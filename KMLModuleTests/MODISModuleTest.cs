@@ -33,6 +33,11 @@ namespace KMLModuleTests
             List<KMLSatelliteFireData> dummyDatas;
             success = parser.ReadByFile("", out dummyDatas);
             Assert.IsFalse(success);
+
+            List<KMLSatelliteFireData> modisURLDatas;
+            success = parser.ReadByURL("https://firms.modaps.eosdis.nasa.gov/active_fire/c6/kml/MODIS_C6_USA_contiguous_and_Hawaii_24h.kml", out modisURLDatas);
+
+            Assert.IsTrue(success);
         }
     }
 }

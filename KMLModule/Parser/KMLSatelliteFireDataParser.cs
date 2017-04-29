@@ -10,6 +10,7 @@ using System.IO;
 using System.Xml;
 using RocketGPS.Model;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace KMLModule.Parser
 {
@@ -20,6 +21,28 @@ namespace KMLModule.Parser
         public static KMLParser Get()
         {
             return parser;
+        }
+
+        public bool ReadByURL(string url, out List<KMLSatelliteFireData> datas)
+        {
+            datas = new List<KMLSatelliteFireData>();
+
+            try
+            {
+                string xmlStr;
+                using (var wc = new WebClient())
+                {
+                    xmlStr = wc.DownloadString(url);
+                }
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xmlStr);
+
+                return Read(xmlDoc.InnerXml, out datas);
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool ReadByFile(string filePath, out List<KMLSatelliteFireData> datas)
