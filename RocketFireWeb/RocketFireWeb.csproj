@@ -264,7 +264,7 @@
     <Compile Include="Controllers\EvacuationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportFireController.cs" />
-    <Compile Include="Converters\ValuesController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Converters\EvacuationPointConverter.cs" />
     <Compile Include="Converters\FireLocationConverter.cs" />
     <Compile Include="Converters\IEvacuationPointConverter.cs" />

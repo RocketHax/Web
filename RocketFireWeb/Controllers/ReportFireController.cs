@@ -11,7 +11,6 @@ using System.Web.Http;
 
 namespace RocketFireWeb.Controllers
 {
-  [RoutePrefix("api/ReportFire")]
   public class ReportFireController : ApiController
   {
 
@@ -23,15 +22,16 @@ namespace RocketFireWeb.Controllers
       _repository = repository;
       _converter = converter;
     }
-
-    [HttpPost]
-    public void AddFireLocation(AddFireLocationModel model)
+    
+    // POST api/reportfire
+    public void Post(AddFireLocationModel model)
     {
       _repository.Add(_converter.ToFireLocationReport(model));
+      _repository.Commit();
     }
-
-    [HttpGet]
-    public ReportedFireInAreaModel GetFireLocations(double latitude1, double latitude2, double longitude1, double longitude2)
+    
+    // GET api/reportfire?latitude1= ...
+    public ReportedFireInAreaModel Get(double latitude1, double latitude2, double longitude1, double longitude2)
     {
       //_repository.GetReportedFireInArea(_converter.ToGeoLocation(model.First), _converter.ToGeoLocation(model.Second));
       //_repository.AllIncluding()

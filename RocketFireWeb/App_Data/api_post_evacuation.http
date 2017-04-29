@@ -1,0 +1,7 @@
+POST http://localhost:60131/api/evacuation HTTP/1.1
+content-type: application/json
+
+{
+    "latitude": 109.9090900,
+    "longitude": 122.9098123
+}

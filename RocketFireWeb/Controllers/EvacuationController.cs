@@ -11,7 +11,6 @@ using System.Web.Http;
 
 namespace RocketFireWeb.Controllers
 {
-  [RoutePrefix("api/ReportFire")]
   public class EvacuationController : ApiController
   {
 
@@ -23,15 +22,16 @@ namespace RocketFireWeb.Controllers
       _repository = repository;
       _converter = converter;
     }
-
-    [HttpPost]
-    public void AddEvacuationPoint(AddEvacuationPointModel model)
+    
+    // POST api/evacuation
+    public void Post(AddEvacuationPointModel model)
     {
       _repository.Add(_converter.ToEvacuationPoint(model));
+      _repository.Commit();
     }
 
-    [Route("GetFireLocation")]
-    public GetEvacuationPointsModel GetEvacuationPoints(double latitude, double longitude)
+    // GET api/evacuation?latitude=00?
+    public GetEvacuationPointsModel Get(double latitude, double longitude)
     {
       //_repository.GetReportedFireInArea(_converter.ToGeoLocation(model.First), _converter.ToGeoLocation(model.Second));
       //_repository.AllIncluding()
