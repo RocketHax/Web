@@ -7,8 +7,8 @@ namespace RocketFireWeb.Models
 {
   public class FireLocationAreaModel
   {
-    public ReportLocationModel First { get; set; }
+    public AddFireLocationModel First { get; set; }
 
-    public ReportLocationModel Second { get; set; }
+    public AddFireLocationModel Second { get; set; }
   }
 }

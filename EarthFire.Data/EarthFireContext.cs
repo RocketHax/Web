@@ -10,7 +10,8 @@ namespace EarthFire.Data
 {
   public class EarthFireContext : DbContext
   {
-    public System.Data.Entity.DbSet<GeoLocation> GeoLocations { get; set; }
+    public System.Data.Entity.DbSet<FireLocationReport> GeoLocations { get; set; }
+    public System.Data.Entity.DbSet<EvacuationPoint> EvacuationPoints { get; set; }
 
     public EarthFireContext(string nameOrConnectionString) : base(nameOrConnectionString)
     {
@@ -28,7 +29,7 @@ namespace EarthFire.Data
       //  relationship.DeleteBehavior = DeleteBehavior.Restrict;
       //}
 
-      //modelBuilder.Entity<GeoLocation>().ToTable("GeoLocation");
+      //modelBuilder.Entity<FireLocationReport>().ToTable("GeoLocation");
       //modelBuilder.Entity<GeoLocation>().Property(s => s.Latitude).IsRequired();
       //modelBuilder.Entity<GeoLocation>().Property(s => s.Latitude).IsRequired();
       //modelBuilder.Entity<Schedule>().Property(s => s.DateCreated).HasDefaultValue(DateTime.Now);

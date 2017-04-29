@@ -5,12 +5,8 @@ using System.Web;
 
 namespace RocketFireWeb.Models
 {
-  public class ReportLocationModel
+  public class AddFireLocationModel : GeoLocationModel
   {
-    public double Latitude { get; set; }
-
-    public double Longitude { get; set; }
-
     public double Bearing { get; set; }
   }
 }

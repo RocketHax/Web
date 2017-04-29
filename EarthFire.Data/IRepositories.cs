@@ -7,5 +7,7 @@ using System.Threading.Tasks;
 
 namespace EarthFire.Data
 {
-  public interface IGeoLocationRepository : IEntityBaseRepository<GeoLocation> { }
+  public interface IFirePointRepository : IEntityBaseRepository<FireLocationReport> { }
+
+  public interface IEvacuationPointRepository : IEntityBaseRepository<EvacuationPoint> { }
 }
