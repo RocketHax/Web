@@ -1,4 +1,5 @@
 ﻿using EarthFire.Data;
+using EarthFire.Facade;
 using RocketFireWeb.Converters;
 using RocketFireWeb.Models;
 using System;
@@ -15,30 +16,23 @@ namespace RocketFireWeb.Controllers
   {
 
     private IFirePointRepository _repository;
-    private IFireLocationConverter _converter;
+    private IGeoLocationConverter _converter;
+    private IFireReportToFireSourceFacade _facade;
 
-    public FireSourceController(IFirePointRepository repository, IFireLocationConverter converter)
+    public FireSourceController(IFirePointRepository repository, IGeoLocationConverter converter, IFireReportToFireSourceFacade facade)
     {
       _repository = repository;
       _converter = converter;
-    }
-
-    // POST api/reportfire
-    public void Post(AddFireLocationModel model)
-    {
-      _repository.Add(_converter.ToFireLocationReport(model));
-      _repository.Commit();
+      _facade = facade;
     }
 
     // GET api/reportfire?latitude1= ...
-    public ReportedFireInAreaModel Get(double latitude1, double latitude2, double longitude1, double longitude2)
+    public FireSourcesModel Get(double latitude1, double latitude2, double longitude1, double longitude2)
     {
-      //_repository.GetReportedFireInArea(_converter.ToGeoLocation(model.First), _converter.ToGeoLocation(model.Second));
-      //_repository.AllIncluding()
-
-      return new ReportedFireInAreaModel
+      var geoLocations = _facade.TriangulateFireSourceCoordinates(_repository.GetAll().ToList());
+      return new FireSourcesModel
       {
-        Locations = _converter.FromFireLocationReports(_repository.GetAll().ToList())
+        Locations = _converter.FromFireLocationReports(geoLocations)
       };
     }
   }

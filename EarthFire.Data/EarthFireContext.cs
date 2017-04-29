@@ -19,7 +19,7 @@ namespace EarthFire.Data
       Database.SetInitializer<EarthFireContext>(new DropCreateDatabaseIfModelChanges<EarthFireContext>());
 
       //Database.SetInitializer<EarthFireContext>(new DropCreateDatabaseAlways<EarthFireContext>());
-      //Database.SetInitializer<EarthFireContext>(new SchoolDBInitializer());
+      Database.SetInitializer<EarthFireContext>(new EarthFireInitializer());
     }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)

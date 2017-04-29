@@ -6,6 +6,8 @@ using RocketFireWeb.Repositories;
 using RocketFireWeb.Converters;
 using EarthFire.Data;
 using EarthFire.Data.Repositories;
+using EarthFire.Facade;
+using EarthFire.Facade.Facades;
 
 namespace RocketFireWeb
 {
@@ -28,6 +30,9 @@ namespace RocketFireWeb
     private static void InitializeContainer(Container container)
     {
       container.Register<EarthFireContext>(() => new EarthFireContext("name=DefaultConnection"), Lifestyle.Singleton);
+
+      container.Register<IGeoLocationConverter, GeoLocationConverter>();
+      container.Register<IFireReportToFireSourceFacade, FireReportToFireSourceFacade>();
 
       container.Register<IEvacuationPointRepository, EvacuationPointRepository>();
       container.Register<IEvacuationPointConverter, EvacuationPointConverter>();
