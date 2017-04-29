@@ -39,8 +39,9 @@ namespace KMLModule.Parser
 
                 return Read(xmlDoc.InnerXml, out datas);
             }
-            catch
+            catch (Exception ex)
             {
+        Console.WriteLine(ex.Message);
                 return false;
             }
         }

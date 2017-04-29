@@ -7,9 +7,9 @@ using System.Web;
 
 namespace RocketFireWeb.Converters
 {
-  public class GeoLocationConverter : IGeoLocationConverter
+  public class GeoLocationModelConverter : IGeoLocationModelConverter
   {
-    public GeoLocationModel FromFireLocationReport(GeoLocation model)
+    public GeoLocationModel FromGeoLocation(GeoLocation model)
     {
       return new AddFireLocationModel
       {
@@ -18,7 +18,7 @@ namespace RocketFireWeb.Converters
       };
     }
 
-    public GeoLocation ToFireLocationReport(GeoLocationModel model)
+    public GeoLocation ToGeoLocation(GeoLocationModel model)
     {
       return new GeoLocation
       {
@@ -27,8 +27,8 @@ namespace RocketFireWeb.Converters
       };
     }
 
-    public IList<GeoLocationModel> FromFireLocationReports(IList<GeoLocation> model) => model.Select(FromFireLocationReport).ToList();
+    public IList<GeoLocationModel> FromGeoLocation(IList<GeoLocation> model) => model.Select(FromGeoLocation).ToList();
 
-    public IList<GeoLocation> ToFireLocationReports(IList<GeoLocationModel> model) => model.Select(ToFireLocationReport).ToList();
+    public IList<GeoLocation> ToGeoLocation(IList<GeoLocationModel> model) => model.Select(ToGeoLocation).ToList();
   }
 }
