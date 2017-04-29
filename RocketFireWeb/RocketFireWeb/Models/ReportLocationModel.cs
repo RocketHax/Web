@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RocketFireWeb.Models
 {
-  public class ReportLocationModels
+  public class ReportLocationModel
   {
     public double Latitude { get; set; }
 

@@ -5,10 +5,10 @@ using System.Web;
 
 namespace RocketFireWeb.Models
 {
-  public class FireLocationAreaModels
+  public class FireLocationAreaModel
   {
-    public ReportLocationModels First { get; set; }
+    public ReportLocationModel First { get; set; }
 
-    public ReportLocationModels Second { get; set; }
+    public ReportLocationModel Second { get; set; }
   }
 }

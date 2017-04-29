@@ -9,7 +9,7 @@ namespace RocketFireWeb.Converters
 {
   public class FireLocationConverter : IFireLocationConverter
   {
-    public GeoLocation ToGeoLocation(ReportLocationModels model)
+    public GeoLocation ToGeoLocation(ReportLocationModel model)
     {
       return new GeoLocation
       {

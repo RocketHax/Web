@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RocketFireWeb.Models
 {
-  public class ReportedFireInAreaModels
+  public class ReportedFireInAreaModel
   {
   }
 }

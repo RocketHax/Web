@@ -11,6 +11,7 @@ using System.Web.Http;
 
 namespace RocketFireWeb.Controllers
 {
+  [RoutePrefix("api/ReportFire")]
   public class ReportFireController : ApiController
   {
 
@@ -23,7 +24,11 @@ namespace RocketFireWeb.Controllers
       _converter = converter;
     }
 
-    [Route("Test")]
+    public string Get()
+    {
+      return "Report fire";
+    }
+
     public string ReportFire(string fire_name)
     {
       return fire_name;
@@ -35,12 +40,13 @@ namespace RocketFireWeb.Controllers
       _repository.Add(_converter.ToGeoLocation(model));
     }
 
-    public ReportedFireInAreaModels GetFireLocations(FireLocationAreaModel model)
+    [Route("GetFireLocation")]
+    public ReportedFireInAreaModel GetFireLocations(FireLocationAreaModel model)
     {
       _repository.GetReportedFireInArea(_converter.ToGeoLocation(model.First), _converter.ToGeoLocation(model.Second));
 
       // TODO: return something useful
-      return new ReportedFireInAreaModels { };
+      return new ReportedFireInAreaModel { };
     }
   }
 }
