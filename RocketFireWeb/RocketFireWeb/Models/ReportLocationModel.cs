@@ -10,5 +10,7 @@ namespace RocketFireWeb.Models
     public double Latitude { get; set; }
 
     public double Longitude { get; set; }
+
+    public double Bearing { get; set; }
   }
 }

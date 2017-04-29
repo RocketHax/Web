@@ -30,6 +30,7 @@ namespace RocketFireWeb
       );
 
       config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+      config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/plain"));
     }
   }
 }

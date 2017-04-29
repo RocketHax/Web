@@ -7,5 +7,7 @@ namespace RocketFireWeb.Models
 {
   public class ReportedFireInAreaModel
   {
+    public FireLocationAreaModel area;
+    public IList<ReportLocationModel> locations;
   }
 }
