@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //HACKING BEGINS
-namespace RocketGPSMath.GPSMath
+namespace RocketGPSMath.Core
 {
     public class FireDepartment
     {

@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GPSMath\FireDepartment.cs" />
+    <Compile Include="Core\FireDepartment.cs" />
     <Compile Include="GPSMath\GPSMathProcessor.cs" />
     <Compile Include="GPSMath\RegionTriangulator.cs" />
     <Compile Include="Model\KMLSatelliteFireData.cs" />
