@@ -28,7 +28,7 @@ namespace RocketFireWeb
     private static void InitializeContainer(Container container)
     {
       container.Register<EarthFireContext>(() => new EarthFireContext("name=DefaultConnection"), Lifestyle.Singleton);
-      container.Register<IGeoLocationRepository, GeoLocationRepository>();
+      container.Register<IFirePointRepository, FirePointRepository>();
       container.Register<IFireLocationConverter, FireLocationConverter>();
     }
   }

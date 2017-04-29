@@ -9,12 +9,12 @@ namespace RocketFireWeb.Converters
 {
   public interface IFireLocationConverter
   {
-    GeoLocation ToGeoLocation(ReportLocationModel model);
+    FireLocationReport ToFireLocationReport(AddFireLocationModel model);
 
-    IList<GeoLocation> ToGeoLocations(IList<ReportLocationModel> model);
+    IList<FireLocationReport> ToFireLocationReports(IList<AddFireLocationModel> model);
 
-    ReportLocationModel FromGeoLocation(GeoLocation model);
+    AddFireLocationModel FromFireLocationReport(FireLocationReport model);
 
-    IList<ReportLocationModel> FromGeoLocations(IList<GeoLocation> model);
+    IList<AddFireLocationModel> FromFireLocationReports(IList<FireLocationReport> model);
   }
 }

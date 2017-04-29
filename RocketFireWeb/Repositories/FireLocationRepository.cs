@@ -8,14 +8,14 @@ namespace RocketFireWeb.Repositories
 {
   public class FireLocationRepository : IFireLocationRepository
   {
-    public void Add(GeoLocation location)
+    public void Add(FireLocationReport location)
     {
 
     }
 
-    public IList<GeoLocation> GetReportedFireInArea(GeoLocation first, GeoLocation second)
+    public IList<FireLocationReport> GetReportedFireInArea(FireLocationReport first, FireLocationReport second)
     {
-      return new List<GeoLocation>();
+      return new List<FireLocationReport>();
     }
   }
 }

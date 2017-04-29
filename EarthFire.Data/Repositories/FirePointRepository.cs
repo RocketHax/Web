@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace EarthFire.Data.Repositories
 {
-  public class GeoLocationRepository : EntityBaseRepository<GeoLocation>, IGeoLocationRepository
+  public class FirePointRepository : EntityBaseRepository<FireLocationReport>, IFirePointRepository
   {
-    public GeoLocationRepository(EarthFireContext context)
+    public FirePointRepository(EarthFireContext context)
         : base(context)
     { }
   }

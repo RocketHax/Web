@@ -9,9 +9,9 @@ namespace RocketFireWeb.Converters
 {
   public class FireLocationConverter : IFireLocationConverter
   {
-    public ReportLocationModel FromGeoLocation(GeoLocation model)
+    public AddFireLocationModel FromFireLocationReport(FireLocationReport model)
     {
-      return new ReportLocationModel
+      return new AddFireLocationModel
       {
         Latitude = model.Latitude,
         Longitude = model.Longitude,
@@ -19,9 +19,9 @@ namespace RocketFireWeb.Converters
       };
     }
 
-    public GeoLocation ToGeoLocation(ReportLocationModel model)
+    public FireLocationReport ToFireLocationReport(AddFireLocationModel model)
     {
-      return new GeoLocation
+      return new FireLocationReport
       {
         Latitude = model.Latitude,
         Longitude = model.Longitude,
@@ -29,8 +29,8 @@ namespace RocketFireWeb.Converters
       };
     }
 
-    public IList<ReportLocationModel> FromGeoLocations(IList<GeoLocation> model) => model.Select(FromGeoLocation).ToList();
+    public IList<AddFireLocationModel> FromFireLocationReports(IList<FireLocationReport> model) => model.Select(FromFireLocationReport).ToList();
 
-    public IList<GeoLocation> ToGeoLocations(IList<ReportLocationModel> model) => model.Select(ToGeoLocation).ToList();
+    public IList<FireLocationReport> ToFireLocationReports(IList<AddFireLocationModel> model) => model.Select(ToFireLocationReport).ToList();
   }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EarthFire.Model.Entities
 {
-  public class GeoLocation : IEntityBase
+  public class FireLocationReport : IEntityBase
   {
     public int Id { get; set; }
 

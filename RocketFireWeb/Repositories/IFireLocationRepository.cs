@@ -8,8 +8,8 @@ namespace RocketFireWeb.Repositories
 {
   public interface IFireLocationRepository
   {
-    void Add(GeoLocation location);
+    void Add(FireLocationReport location);
 
-    IList<GeoLocation> GetReportedFireInArea(GeoLocation first, GeoLocation second);
+    IList<FireLocationReport> GetReportedFireInArea(FireLocationReport first, FireLocationReport second);
   }
 }
