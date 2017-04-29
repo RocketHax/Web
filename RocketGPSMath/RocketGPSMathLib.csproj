@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\FireDepartment.cs" />
+    <Compile Include="GPSMath\FireValidator.cs" />
     <Compile Include="GPSMath\GPSMathProcessor.cs" />
     <Compile Include="GPSMath\RegionTriangulator.cs" />
     <Compile Include="Model\KMLSatelliteFireData.cs" />
