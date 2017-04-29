@@ -264,6 +264,7 @@
     <Compile Include="Controllers\EvacuationController.cs" />
     <Compile Include="Controllers\FireSourceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NasaFireDataController.cs" />
     <Compile Include="Controllers\ReportFireController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Converters\EvacuationPointConverter.cs" />
@@ -272,17 +273,21 @@
     <Compile Include="Converters\IEvacuationPointConverter.cs" />
     <Compile Include="Converters\IGeoLocationConverter.cs" />
     <Compile Include="Converters\IFireLocationConverter.cs" />
+    <Compile Include="Converters\INasaFireDataConverter.cs" />
+    <Compile Include="Converters\NasaFireDataModelConveter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddEvacuationPointModel.cs" />
+    <Compile Include="Models\GetEvacuationPointModel.cs" />
     <Compile Include="Models\FireLocationAreaModel.cs" />
     <Compile Include="Models\FireSourcesModel.cs" />
     <Compile Include="Models\GeoLocationModel.cs" />
     <Compile Include="Models\GetEvacuationPointsModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\NasaFireDataModel.cs" />
     <Compile Include="Models\ReportedFireInAreaModel.cs" />
     <Compile Include="Models\AddFireLocationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

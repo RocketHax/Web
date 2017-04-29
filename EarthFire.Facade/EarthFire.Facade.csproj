@@ -43,9 +43,13 @@
   <ItemGroup>
     <Compile Include="Converters\FireLocationReportConverter.cs" />
     <Compile Include="Converters\GeoLocationConverter.cs" />
+    <Compile Include="Converters\NasaFireDataConverter.cs" />
     <Compile Include="Facades\FireReportToFireSourceFacade.cs" />
+    <Compile Include="Facades\NasaFireDataFacade.cs" />
     <Compile Include="IFireReportToFireSourceFacade.cs" />
+    <Compile Include="INasaFireDataFacade.cs" />
     <Compile Include="Models\GeoLocation.cs" />
+    <Compile Include="Models\NasaFireData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
@@ -53,6 +57,10 @@
     <ProjectReference Include="..\EarthFire.Model\EarthFire.Model.csproj">
       <Project>{1ec2c719-4baa-42fa-9706-d553428c0044}</Project>
       <Name>EarthFire.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KMLModule\KMLModule.csproj">
+      <Project>{666252bd-dd2b-44dc-b28f-d269e32436a3}</Project>
+      <Name>KMLModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\RocketGPSMath\RocketGPSMathLib.csproj">
       <Project>{a70b435e-31d6-4530-951f-7825c5723f7f}</Project>
