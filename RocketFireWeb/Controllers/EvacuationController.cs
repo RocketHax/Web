@@ -22,7 +22,7 @@ namespace RocketFireWeb.Controllers
       _repository = repository;
       _converter = converter;
     }
-    
+
     // POST api/evacuation
     public void Post(AddEvacuationPointModel model)
     {
@@ -38,7 +38,7 @@ namespace RocketFireWeb.Controllers
 
       return new GetEvacuationPointsModel
       {
-        Locations = _converter.FromEvacuationPoints(_repository.GetAll().ToList())
+        Locations = _converter.FromEvacuationPoint(_repository.GetAll()).ToList()
       };
     }
   }

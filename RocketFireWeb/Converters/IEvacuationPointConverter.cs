@@ -11,10 +11,10 @@ namespace RocketFireWeb.Converters
   {
     EvacuationPoint ToEvacuationPoint(AddEvacuationPointModel model);
 
-    IList<EvacuationPoint> ToEvacuationPoints(IList<AddEvacuationPointModel> model);
+    IEnumerable<EvacuationPoint> ToEvacuationPoint(IEnumerable<AddEvacuationPointModel> model);
 
     AddEvacuationPointModel FromEvacuationPoint(EvacuationPoint model);
 
-    IList<AddEvacuationPointModel> FromEvacuationPoints(IList<EvacuationPoint> model);
+    IEnumerable<AddEvacuationPointModel> FromEvacuationPoint(IEnumerable<EvacuationPoint> model);
   }
 }

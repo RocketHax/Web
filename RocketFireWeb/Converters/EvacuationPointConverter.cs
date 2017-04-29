@@ -14,7 +14,9 @@ namespace RocketFireWeb.Converters
       return new AddEvacuationPointModel
       {
         Latitude = model.Latitude,
-        Longitude = model.Longitude
+        Longitude = model.Longitude,
+        Type = model.Type,
+        Name = model.Name
       };
     }
 
@@ -23,12 +25,14 @@ namespace RocketFireWeb.Converters
       return new EvacuationPoint
       {
         Latitude = model.Latitude,
-        Longitude = model.Longitude
+        Longitude = model.Longitude,
+        Type = model.Type,
+        Name = model.Name
       };
     }
 
-    public IList<AddEvacuationPointModel> FromEvacuationPoints(IList<EvacuationPoint> model) => model.Select(FromEvacuationPoint).ToList();
+    public IEnumerable<AddEvacuationPointModel> FromEvacuationPoint(IEnumerable<EvacuationPoint> model) => model.Select(FromEvacuationPoint);
 
-    public IList<EvacuationPoint> ToEvacuationPoints(IList<AddEvacuationPointModel> model) => model.Select(ToEvacuationPoint).ToList();
+    public IEnumerable<EvacuationPoint> ToEvacuationPoint(IEnumerable<AddEvacuationPointModel> model) => model.Select(ToEvacuationPoint);
   }
 }
