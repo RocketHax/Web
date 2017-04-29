@@ -40,7 +40,10 @@ namespace RocketGPSMath.GPSMath
                 {
                     var otherReport = reports[j];
                     var res = GPSMathProcessor.Get().CalculateIntersection(currReport, otherReport);
-                    resultingRegion.Add(res);
+
+                    //Only add if the intersection point distance to both reporters are below 20KM distance
+                    if(res.DistanceTo(currReport) < 20 && res.DistanceTo(otherReport) < 20)
+                        resultingRegion.Add(res);
                 }
             }
 
