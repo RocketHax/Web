@@ -26,7 +26,7 @@ namespace RocketFireWeb.Controllers
       _facade = facade;
     }
 
-    // GET api/reportfire?latitude1= ...
+    // GET api/firesource?latitude1= ...
     public FireSourcesModel Get(double latitude1, double latitude2, double longitude1, double longitude2)
     {
       var geoLocations = _facade.TriangulateFireSourceCoordinates(_repository.GetAll().ToList());

@@ -11,6 +11,7 @@ namespace EarthFire.Data
   public class EarthFireContext : DbContext
   {
     public System.Data.Entity.DbSet<FireLocationReport> FireLocationReports { get; set; }
+
     public System.Data.Entity.DbSet<EvacuationPoint> EvacuationPoints { get; set; }
 
     public EarthFireContext(string nameOrConnectionString) : base(nameOrConnectionString)
@@ -19,7 +20,7 @@ namespace EarthFire.Data
       Database.SetInitializer<EarthFireContext>(new DropCreateDatabaseIfModelChanges<EarthFireContext>());
 
       //Database.SetInitializer<EarthFireContext>(new DropCreateDatabaseAlways<EarthFireContext>());
-      Database.SetInitializer<EarthFireContext>(new EarthFireInitializer());
+      //Database.SetInitializer<EarthFireContext>(new EarthFireInitializer());
     }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -29,7 +30,9 @@ namespace EarthFire.Data
       //  relationship.DeleteBehavior = DeleteBehavior.Restrict;
       //}
 
-      //modelBuilder.Entity<FireLocationReport>().ToTable("GeoLocation");
+      modelBuilder.Entity<FireLocationReport>().ToTable("FireLocationReport");
+      modelBuilder.Entity<EvacuationPoint>().ToTable("EvacuationPoint");
+
       //modelBuilder.Entity<GeoLocation>().Property(s => s.Latitude).IsRequired();
       //modelBuilder.Entity<GeoLocation>().Property(s => s.Latitude).IsRequired();
       //modelBuilder.Entity<Schedule>().Property(s => s.DateCreated).HasDefaultValue(DateTime.Now);
