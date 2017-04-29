@@ -30,6 +30,9 @@ namespace RocketFireWeb
     private static void InitializeContainer(Container container)
     {
       container.Register<EarthFireContext>(() => new EarthFireContext("name=DefaultConnection"), Lifestyle.Singleton);
+      
+      container.Register<INasaFireDataFacade, NasaFireDataFacade>();
+      container.Register<INasaFireDataModelConverter, NasaFireDataModelConverter>();
 
       container.Register<IGeoLocationConverter, GeoLocationConverter>();
       container.Register<IFireReportToFireSourceFacade, FireReportToFireSourceFacade>();
