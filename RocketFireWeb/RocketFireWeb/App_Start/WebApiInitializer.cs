@@ -4,6 +4,8 @@ using SimpleInjector.Integration.WebApi;
 using SimpleInjector.Lifestyles;
 using RocketFireWeb.Repositories;
 using RocketFireWeb.Converters;
+using EarthFire.Data;
+using EarthFire.Data.Repositories;
 
 namespace RocketFireWeb
 {
@@ -25,7 +27,8 @@ namespace RocketFireWeb
 
     private static void InitializeContainer(Container container)
     {
-      container.Register<IFireLocationRepository, FireLocationRepository>();
+      container.Register<EarthFireContext>(() => new EarthFireContext("name=DefaultConnection"), Lifestyle.Singleton);
+      container.Register<IGeoLocationRepository, GeoLocationRepository>();
       container.Register<IFireLocationConverter, FireLocationConverter>();
     }
   }

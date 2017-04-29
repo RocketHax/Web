@@ -1,6 +1,6 @@
-﻿using RocketFireWeb.Converters;
+﻿using EarthFire.Data;
+using RocketFireWeb.Converters;
 using RocketFireWeb.Models;
-using RocketFireWeb.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,36 +11,46 @@ using System.Web.Http;
 
 namespace RocketFireWeb.Controllers
 {
+  [RoutePrefix("api/ReportFire")]
   public class ReportFireController : ApiController
   {
 
-    private IFireLocationRepository _repository;
+    private IGeoLocationRepository _repository;
     private IFireLocationConverter _converter;
 
-    public ReportFireController(IFireLocationRepository repository, IFireLocationConverter converter)
+    public ReportFireController(IGeoLocationRepository repository, IFireLocationConverter converter)
     {
       _repository = repository;
       _converter = converter;
     }
 
-    [Route("Test")]
+    public string Get()
+    {
+      return "Report fire";
+    }
+
     public string ReportFire(string fire_name)
     {
       return fire_name;
     }
 
     [Route("ReportLocation")]
+    [HttpPost]
     public void ReportLocation(ReportLocationModel model)
     {
       _repository.Add(_converter.ToGeoLocation(model));
     }
 
-    public ReportedFireInAreaModels GetFireLocations(FireLocationAreaModel model)
+    [Route("GetFireLocation")]
+    public ReportedFireInAreaModel GetFireLocations(FireLocationAreaModel model)
     {
-      _repository.GetReportedFireInArea(_converter.ToGeoLocation(model.First), _converter.ToGeoLocation(model.Second));
+      //_repository.GetReportedFireInArea(_converter.ToGeoLocation(model.First), _converter.ToGeoLocation(model.Second));
+      //_repository.AllIncluding()
 
-      // TODO: return something useful
-      return new ReportedFireInAreaModels { };
+      return new ReportedFireInAreaModel {
+        area = model,
+        locations = _converter.FromGeoLocations(_repository.GetAll().ToList())
+      };
     }
   }
 }
