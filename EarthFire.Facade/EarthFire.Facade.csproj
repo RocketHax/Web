@@ -52,7 +52,6 @@
     <Compile Include="Models\NasaFireData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\EarthFire.Model\EarthFire.Model.csproj">
       <Project>{1ec2c719-4baa-42fa-9706-d553428c0044}</Project>

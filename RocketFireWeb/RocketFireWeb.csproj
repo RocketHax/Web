@@ -264,14 +264,15 @@
     <Compile Include="Controllers\EvacuationController.cs" />
     <Compile Include="Controllers\FireSourceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NasaFireDataController.cs" />
+    <Compile Include="Controllers\NasaFireDataModisController.cs" />
+    <Compile Include="Controllers\NasaFireDataViirsController.cs" />
     <Compile Include="Controllers\ReportFireController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Converters\EvacuationPointConverter.cs" />
     <Compile Include="Converters\FireLocationConverter.cs" />
-    <Compile Include="Converters\GeoLocationConverter.cs" />
+    <Compile Include="Converters\GeoLocationModelConverter.cs" />
     <Compile Include="Converters\IEvacuationPointConverter.cs" />
-    <Compile Include="Converters\IGeoLocationConverter.cs" />
+    <Compile Include="Converters\IGeoLocationModelConverter.cs" />
     <Compile Include="Converters\IFireLocationConverter.cs" />
     <Compile Include="Converters\INasaFireDataConverter.cs" />
     <Compile Include="Converters\NasaFireDataModelConveter.cs" />
@@ -340,6 +341,12 @@
     <Content Include="ApiDemo\api_get_reportfire.http" />
     <Content Include="ApiDemo\api_post_evacuation.http" />
     <Content Include="ApiDemo\api_post_reportfire.http" />
+    <Content Include="ApiDemo\MODIS_C6_USA_contiguous_and_Hawaii_24h.kml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ApiDemo\VNP14IMGTDL_NRT_USA_contiguous_and_Hawaii_24h.kml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

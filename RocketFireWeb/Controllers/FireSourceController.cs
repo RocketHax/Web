@@ -16,10 +16,10 @@ namespace RocketFireWeb.Controllers
   {
 
     private IFirePointRepository _repository;
-    private IGeoLocationConverter _converter;
+    private IGeoLocationModelConverter _converter;
     private IFireReportToFireSourceFacade _facade;
 
-    public FireSourceController(IFirePointRepository repository, IGeoLocationConverter converter, IFireReportToFireSourceFacade facade)
+    public FireSourceController(IFirePointRepository repository, IGeoLocationModelConverter converter, IFireReportToFireSourceFacade facade)
     {
       _repository = repository;
       _converter = converter;
@@ -32,7 +32,7 @@ namespace RocketFireWeb.Controllers
       var geoLocations = _facade.TriangulateFireSourceCoordinates(_repository.GetAll().ToList());
       return new FireSourcesModel
       {
-        Locations = _converter.FromFireLocationReports(geoLocations)
+        Locations = _converter.FromGeoLocation(geoLocations)
       };
     }
   }

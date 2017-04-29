@@ -10,7 +10,7 @@ namespace EarthFire.Data
 {
   public class EarthFireContext : DbContext
   {
-    public System.Data.Entity.DbSet<FireLocationReport> GeoLocations { get; set; }
+    public System.Data.Entity.DbSet<FireLocationReport> FireLocationReports { get; set; }
     public System.Data.Entity.DbSet<EvacuationPoint> EvacuationPoints { get; set; }
 
     public EarthFireContext(string nameOrConnectionString) : base(nameOrConnectionString)
