@@ -7,8 +7,8 @@
     <ProjectGuid>{666252BD-DD2B-44DC-B28F-D269E32436A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MODISDataProcessor</RootNamespace>
-    <AssemblyName>MODISDataProcessor</AssemblyName>
+    <RootNamespace>KMLModule</RootNamespace>
+    <AssemblyName>KMLModule</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
