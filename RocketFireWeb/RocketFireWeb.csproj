@@ -342,6 +342,8 @@
     <Content Include="ApiDemo\api_post_evacuation.http" />
     <Content Include="ApiDemo\api_post_reportfire.http" />
     <Content Include="ApiDemo\api_get_firesource.http" />
+    <None Include="Properties\PublishProfiles\fireescape - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\fireescape - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -401,6 +403,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
